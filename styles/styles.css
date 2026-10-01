@@ -97,7 +97,22 @@ a:active {
 
 /* Header
 --------------------------------------------- */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+}
 
+/* 2. 背景掛在 hero 上，並留出頂部 padding 避免文字撞到導覽列 */
+.hero {
+  background-image: url('images/your-gradient-bg.webp');
+  background-size: cover;
+  background-position: top center;
+  padding-top: 100px; /* 預留給上方絕對定位導覽列的高度 */
+}
 
 /* Main
 --------------------------------------------- */
