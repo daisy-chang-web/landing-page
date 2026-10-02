@@ -11,43 +11,45 @@
 
   <body>
     <div class="site-wrapper">
-      <header class="site-header">
-        <img
-          class="site-logo"
-          src="images/favicon.svg"
-          alt="Daisy Website Logo"
-          width="50"
-          height="50"
-          viewBox="0 0 24 24"
-        />
+      <div class="site-header-wrapper">
+        <header class="site-header">
+          <img
+            class="site-logo"
+            src="images/favicon.svg"
+            alt="Daisy Website Logo"
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+          />
 
-        <nav class="site-navigation" id="site-navigation">
-          <button
-            class="menu-toggle"
-            aria-controls="header-menu"
-            aria-expanded="false"
-            aria-label="Menu Toggle"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="36"
-              height="36"
-              viewBox="0 0 24 24"
+          <nav class="site-navigation" id="site-navigation">
+            <button
+              class="menu-toggle"
+              aria-controls="header-menu"
+              aria-expanded="false"
+              aria-label="Menu Toggle"
             >
-              <title>Menu Icon</title>
-              <path
-                d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"
-              ></path>
-            </svg>
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+              >
+                <title>Menu Icon</title>
+                <path
+                  d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"
+                ></path>
+              </svg>
+            </button>
 
-          <ul class="nav-menu" id="header-menu">
-            <li><a href="#about-me">About</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+            <ul class="nav-menu" id="header-menu">
+              <li><a href="#about-me">About</a></li>
+              <li><a href="#works">Works</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+      </div>
 
       <main class="site-main">
         <div class="hero">
@@ -62,21 +64,18 @@
             <div class="about-card">
               <h2>About</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit cum minima illum commodi sint, culpa esse quis
-                ducimus ipsam sequi beatae facilis recusandae autem architecto
-                similique dolore eveniet quaerat reiciendis? Lorem ipsum dolor,
-                sit, amet consectetur adipisicing elit. Itaque velit, ullam
-                doloremque quis eveniet architecto alias vel unde. Fuga
-                voluptates incidunt natus laboriosam animi, aut, illo
-                architecto. Neque, excepturi.
+                With a background in Tech Art and two years of industry
+                experience as a web designer at a tech startup. Currently diving
+                deeper into web development, I craft clean, thoughtful digital
+                experiences.
               </p>
             </div>
           </section>
         </div>
 
-        <section class="section-works">
+        <section id="works" class="section-works">
           <div class="works-wrapper">
+			<h2 class="works-title">Works</h2>
             <article class="work">
               <img
                 class="work-image"
@@ -128,7 +127,7 @@
         </section>
       </main>
 
-      <footer class="site-footer">
+      <footer id="contact" class="site-footer">
         <img
           class="site-logo"
           src="images/favicon.svg"
@@ -137,9 +136,9 @@
           height="50"
           viewBox="0 0 24 24"
         />
-        <div calss="footer-text">
+        <div class="footer-text">
           <p>910420daisy@gmail.com</p>
-          <p>&copy; FWD 2026.</p>
+          <p>&copy; Daisy Chang.</p>
         </div>
       </footer>
     </div>
