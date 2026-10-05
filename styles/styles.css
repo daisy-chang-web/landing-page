@@ -28,7 +28,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #282828;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 h1,
@@ -43,14 +43,14 @@ h6 {
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 6rem;
   line-height: 0.9;
   margin: 2rem 0;
 }
 
 @media (min-width: 50em) {
   h1 {
-    font-size: 10rem;
+    font-size: 9rem;
   }
 }
 
@@ -74,7 +74,7 @@ section {
 --------------------------------------------- */
 a,
 a:visited {
-  color: #8f4505;
+  color: #582a02;
   text-decoration: none;
 }
 
@@ -92,26 +92,27 @@ a:active {
 # Components
 --------------------------------------------------------------*/
 .site-wrapper {
-  background-color: #f6f6f6;
+  background-color: transparent;
   margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Header
 --------------------------------------------- */
 .site-header-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.156);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
 }
 
 .site-header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.156);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
 }
 
@@ -141,17 +142,25 @@ a:active {
 
 /* Main
 --------------------------------------------- */
-.hero {
+.fixed-background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: url("../images/bg-sand.jpg");
   background-size: cover;
   background-position: top center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero {
   padding: 60px 0 2rem;
   height: max-content;
 }
 .page-header {
-  height: 500px;
-  padding: 0 2rem 60px;
+  padding: 0 10% 60px;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -162,12 +171,11 @@ a:active {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 5%;
+  padding: 10%;
 
 }
 .section-about img {
   width: 100%;
-  height: auto;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
@@ -185,6 +193,8 @@ a:active {
     height: 600px;
 	align-items: center;
 	justify-content: center;
+  padding: 0;
+
   }
   .section-about {
     flex-direction: row;
@@ -192,15 +202,16 @@ a:active {
     justify-content: center;
   }
   .section-about img {
-    width: calc(50% - 2.5rem);
+    display: block;
+    width: calc(50%);
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
   }
   .about-card {
-    width: calc(50% - 2.5rem);
-    aspect-ratio: 3 / 1;
-    padding: 5rem;
+    width: calc(50%);
+    aspect-ratio: 1 / 1;
+    padding: 0 4rem;
     border-radius: 0  20px 20px 0;
     display: flex;
     flex-direction: column;
@@ -218,13 +229,8 @@ a:active {
   flex-direction: column;
   align-items: center;
    background-image: 
-   linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-   url("../images/bg-sand.jpg");
-  background-size: cover;
-  background-position: top center;
-  background-attachment: fixed;
-
-  padding: 5rem 2rem;
+   linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+  padding: 5rem 10%;
 
 }
 .works-wrapper {
@@ -235,12 +241,16 @@ a:active {
 }
 .works-title {
   font-size: 5rem;
+  padding-bottom: 2rem;
 }
 .work {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   overflow: hidden;
-
+}
+.work-image {
+  width: 100%;
+  object-fit: cover;
 }
 
 .work-text {
@@ -259,7 +269,7 @@ a:active {
     gap: 1rem;
   }
   .work {
-    width: calc(25% - 2rem);
+    width: calc(25% - 0.85rem);
   }
   .work-text {
     flex-direction: column;
@@ -276,7 +286,6 @@ a:active {
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   gap: 2rem;
   padding: 2rem;
 }
