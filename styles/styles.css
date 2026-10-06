@@ -52,9 +52,6 @@ h2 {
   font-size: 5rem;
 }
 
-h3 {
-  font-size: 3rem;
-}
 
 @media (min-width: 50em) {
   h1 {
@@ -200,6 +197,10 @@ a:active {
   background-color: rgba(255, 255, 255, 0.319);
   border: 1.5px solid rgb(250, 245, 245);
 }
+.about-card h2 {
+  font-size: 3rem;
+}
+
 @media (min-width: 50em) {
   .page-header {
     height: 700px;
