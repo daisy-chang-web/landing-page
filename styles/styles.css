@@ -52,7 +52,6 @@ h2 {
   font-size: 5rem;
 }
 
-
 @media (min-width: 50em) {
   h1 {
     font-size: 9rem;
@@ -92,61 +91,115 @@ a:active {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
 .site-wrapper {
   background-color: transparent;
   margin: 0 auto;
   width: 100%;
   overflow-x: hidden;
 }
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
 
 /* Header
 --------------------------------------------- */
-.site-header-wrapper {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+.site-header {
+  background-color: rgba(255, 255, 255, 0.225);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index: 1000;
 }
 
-.site-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.156);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
+.site-logo {
+  max-width: 6rem;
+  margin: 1rem;
+}
+
+.site-logo img {
+  display: block;
+}
+
+.site-navigation {
+  padding: 0 1rem;
 }
 
 .site-navigation ul {
-  display: none;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.site-navigation a {
+  display: block;
+  padding: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* START -- STYLES FOR MOBILE MENU */
+.site-navigation ul {
+  display: none;
+  position: absolute;
+  top: 4.75rem;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.427);
 }
 
 .menu-toggle {
-  border: none;
-  background-color: rgb(0, 0, 0, 0);
+  display: block;
+  background-color: transparent;
+  border: 0;
+  padding: 1rem;
 }
 
-@media (min-width: 50em) {
+.menu-toggle:focus {
+  border: 0;
+  outline: 1px dotted;
+}
+
+.site-navigation.toggled ul {
+  display: block;
+}
+/* END -- STYLES FOR MOBILE MENU */
+
+@media (min-width: 43.75em) {
+  .site-header {
+    padding: 0 2rem;
+  }
+
   .menu-toggle {
     display: none;
   }
-  .site-navigation ul {
-    display: flex;
-    gap: 2rem;
+
+  .site-navigation {
+    flex: 1 1 auto;
+    padding: 0 1rem;
   }
-  .nav-menu li {
-    font-size: 1.5rem;
-    font-family: Georgia, Times, "Times New Roman", serif;
+
+  .site-navigation ul,
+  .site-navigation.toggled ul {
+    display: flex;
+    justify-content: flex-end;
+    /* START - Remove Mobile Menu Styles */
+    background-color: transparent;
+    position: relative;
+    top: 0;
+    /* END - Remove Mobile Menu Styles  */
+  }
+
+  .site-navigation a {
+    line-height: 5rem; /* Matches the height of the .site-logo: 6rem + 1rem + 1rem */
+    padding: 0 1rem;
   }
 }
 
@@ -176,6 +229,14 @@ a:active {
   align-items: flex-start;
   justify-content: center;
 }
+.page-header p {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  text-align: left;
+  background-color: transparent;
+}
+
 .section-about {
   display: flex;
   flex-direction: column;
@@ -194,7 +255,7 @@ a:active {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.319);
+  background-color: rgba(255, 255, 255, 0.318);
   border: 1.5px solid rgb(250, 245, 245);
 }
 .about-card h2 {
@@ -207,6 +268,13 @@ a:active {
     align-items: center;
     justify-content: center;
     padding: 0;
+  }
+
+  .page-header p {
+    background-color: rgba(255, 255, 255, 0.233);
+    padding: 0.5rem 5rem;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
   }
   .section-about {
     flex-direction: row;
